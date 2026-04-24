@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYS_ARCH_ADMIN // ORDER_MANAGEMENT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#1c1b1b",
+            "inverse-on-surface": "#313030",
+            "tertiary": "#fface8",
+            "surface-dim": "#131313",
+            "surface-bright": "#393939",
+            "primary-container": "#7b2ff7",
+            "on-secondary": "#003739",
+            "on-tertiary-container": "#ffd8f0",
+            "surface-container-lowest": "#0e0e0e",
+            "on-tertiary-fixed": "#3a0033",
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#004f53",
+            "background": "#131313",
+            "primary": "#d2bbff",
+            "error-container": "#93000a",
+            "tertiary-fixed-dim": "#fface8",
+            "tertiary-fixed": "#ffd7f0",
+            "on-secondary-fixed": "#002021",
+            "on-background": "#e5e2e1",
+            "on-secondary-container": "#006c71",
+            "secondary-fixed": "#63f7ff",
+            "on-primary-fixed-variant": "#5900c6",
+            "inverse-primary": "#7423f0",
+            "primary-fixed": "#eaddff",
+            "surface-container": "#201f1f",
+            "inverse-surface": "#e5e2e1",
+            "surface-container-highest": "#353534",
+            "surface-container-high": "#2a2a2a",
+            "secondary": "#e6feff",
+            "outline-variant": "#4a4456",
+            "primary-fixed-dim": "#d2bbff",
+            "on-primary-fixed": "#25005a",
+            "on-surface-variant": "#ccc3d9",
+            "secondary-container": "#00f4fe",
+            "surface-tint": "#d2bbff",
+            "secondary-fixed-dim": "#00dce5",
+            "surface-variant": "#353534",
+            "on-primary": "#3e008e",
+            "on-error": "#690005",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed-variant": "#840076",
+            "on-primary-container": "#ebddff",
+            "on-surface": "#e5e2e1",
+            "tertiary-container": "#b800a5",
+            "surface": "#131313",
+            "on-tertiary": "#5e0053",
+            "outline": "#958da2"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Manrope"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .chamfer-card {
+      clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #131313;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #7b2ff7;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-white min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center w-full px-6 h-16 fixed top-0 z-50 shadow-[0_0_15px_rgba(123,47,247,0.1)]">
+<div class="flex items-center gap-8">
+<div class="text-xl font-black text-[#d2bbff] tracking-[0.2em] font-['Space_Grotesk'] uppercase">
+        SYS_ARCH_ADMIN
+      </div>
+<div class="hidden md:flex items-center bg-[#1c1c1c] px-4 py-1.5 gap-3 border-b-0">
+<span class="material-symbols-outlined text-gray-500 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs font-['Space_Grotesk'] tracking-widest text-[#00f4fe] placeholder-gray-600 w-64" placeholder="EXECUTE_QUERY..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 mr-4">
+<button class="p-2 text-gray-500 hover:bg-[#7b2ff7]/10 transition-colors duration-150 snappy expo-out">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-gray-500 hover:bg-[#7b2ff7]/10 transition-colors duration-150 snappy expo-out">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+<button class="p-2 text-gray-500 hover:bg-[#7b2ff7]/10 transition-colors duration-150 snappy expo-out">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-3 border-l border-[#1c1c1c] pl-4">
+<div class="text-right hidden sm:block">
+<p class="text-[10px] font-black text-[#d2bbff] tracking-tighter uppercase font-['Space_Grotesk']">Root_Operator</p>
+<p class="text-[8px] text-[#00f4fe] font-bold tracking-widest uppercase">Lvl_01_Access</p>
+</div>
+<img alt="Admin profile" class="w-10 h-10 border border-[#7b2ff7]" data-alt="Close up portrait of a futuristic cyborg with neon violet optical sensors and matte black synthetic skin plating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhF-SQCRRwX8eJMNJBkJxO0sRrTAD5T0uYXNo7CJWMIMpo_SFNs5QiazC8Mjp2j--Ar80hMY2dupJutqLcLgX6leayq5zYVuhf9cHD2exu6vfamKM9QvnkJcGKf7eAlCIPKY71eJ35VA5yiqWFspQHqa-SnrB6CzjheNPKMIt3Hz1thHJUozkk-8F62cYFtMWbI6318_KifUJs7WqnoWDGl3i4mBplDWqNAoEqy-Fv1dryAgMYgkDR6JDuDYOSdAwTp_eDFHhu-eg"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="bg-[#0e0e0e] dark:bg-[#0e0e0e] fixed left-0 top-0 h-full w-64 flex flex-col pt-16 z-40 hidden md:flex">
+<div class="p-6 flex flex-col gap-1 bg-[#131313]">
+<div class="text-lg font-black text-[#d2bbff] font-['Space_Grotesk']">CORE_ADMIN</div>
+<div class="text-[10px] font-bold text-gray-500 tracking-widest">V2.0.4_STABLE</div>
+</div>
+<nav class="flex-1 mt-6 px-3 space-y-1">
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-[#d2bbff] hover:bg-[#1c1c1c] transition-all duration-75 group font-['Space_Grotesk'] text-xs font-bold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-[#d2bbff] hover:bg-[#1c1c1c] transition-all duration-75 group font-['Space_Grotesk'] text-xs font-bold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span>Categories</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-[#d2bbff] hover:bg-[#1c1c1c] transition-all duration-75 group font-['Space_Grotesk'] text-xs font-bold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">memory</span>
+<span>Products</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 bg-[#7b2ff7] text-white border-r-4 border-[#00f4fe] font-['Space_Grotesk'] text-xs font-bold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-gray-400 hover:text-[#d2bbff] hover:bg-[#1c1c1c] transition-all duration-75 group font-['Space_Grotesk'] text-xs font-bold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Users</span>
+</a>
+</nav>
+<div class="p-4 bg-[#131313] mt-auto">
+<button class="w-full py-3 bg-gradient-to-r from-[#7b2ff7] to-[#00f4fe] text-white font-black text-[10px] tracking-[0.2em] uppercase snappy power-4-out">
+        DEPLOY_SYSTEM
+      </button>
+</div>
+<div class="px-3 pb-6 pt-4 space-y-1">
+<a class="flex items-center gap-4 px-4 py-2 text-gray-400 hover:text-[#d2bbff] hover:bg-[#1c1c1c] transition-all duration-75 font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-sm">analytics</span>
+<span>Diagnostics</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 text-gray-400 hover:text-[#d2bbff] hover:bg-[#1c1c1c] transition-all duration-75 font-['Space_Grotesk'] text-[10px] font-bold uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-sm">history</span>
+<span>Logs</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="md:ml-64 pt-16 min-h-screen flex flex-col bg-surface-container-lowest">
+<div class="p-8 flex-1">
+<!-- Page Header -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<div class="h-px w-8 bg-secondary-container"></div>
+<span class="text-secondary-container font-headline text-xs tracking-[0.4em] uppercase font-bold">Protocol_Alpha</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-black font-headline tracking-tighter text-on-background">
+            ORDER_MANAGEMENT
+          </h1>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-low px-4 py-3 flex flex-col border-b-2 border-primary-container">
+<span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Total_Volume</span>
+<span class="text-xl font-headline font-bold text-primary">1,240_UNIT</span>
+</div>
+<div class="bg-surface-container-low px-4 py-3 flex flex-col border-b-2 border-secondary-container">
+<span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Active_Transfers</span>
+<span class="text-xl font-headline font-bold text-secondary-container">42_SYNC</span>
+</div>
+</div>
+</div>
+<!-- Filters & Actions Bar -->
+<div class="bg-surface-container-low p-4 mb-1 flex flex-wrap items-center justify-between gap-4">
+<div class="flex gap-4 items-center">
+<div class="relative group">
+<select class="bg-surface-container-highest border-none text-xs font-bold font-headline tracking-widest text-on-surface uppercase py-2 pl-4 pr-10 appearance-none focus:ring-1 focus:ring-secondary-container cursor-pointer">
+<option>ALL_STATUS</option>
+<option>PENDING</option>
+<option>PROCESSING</option>
+<option>COMPLETED</option>
+<option>CANCELLED</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1.5 text-secondary-container pointer-events-none">expand_more</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant hover:bg-surface-container-highest transition-colors text-[10px] font-bold font-headline tracking-widest uppercase">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+<span>Refine_Feed</span>
+</button>
+</div>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+<button class="p-2 border border-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">print</span>
+</button>
+</div>
+</div>
+<!-- Orders Table Container -->
+<div class="bg-surface-container-low overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high border-b border-surface-container-lowest">
+<th class="px-6 py-4 text-[10px] font-black tracking-[0.2em] text-gray-500 uppercase font-headline">Order_UID</th>
+<th class="px-6 py-4 text-[10px] font-black tracking-[0.2em] text-gray-500 uppercase font-headline">Origin_Node (User)</th>
+<th class="px-6 py-4 text-[10px] font-black tracking-[0.2em] text-gray-500 uppercase font-headline">Credit_Value</th>
+<th class="px-6 py-4 text-[10px] font-black tracking-[0.2em] text-gray-500 uppercase font-headline">System_Status</th>
+<th class="px-6 py-4 text-[10px] font-black tracking-[0.2em] text-gray-500 uppercase font-headline">Override_Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-lowest">
+<!-- Order Row 1: Pending -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5 font-headline font-medium text-secondary-container text-sm tracking-widest">#ORD-0921-X</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-sm text-primary">person</span>
+</div>
+<div>
+<div class="text-xs font-bold uppercase tracking-tight">Kaelen_Vance</div>
+<div class="text-[9px] text-gray-500 font-mono tracking-tighter">IP: 192.168.1.104</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-headline font-bold text-on-background">§ 4,250.00</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-yellow-900/20 border border-yellow-500/30 text-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.2)]">
+<div class="w-1.5 h-1.5 bg-yellow-500 animate-pulse"></div>
+<span class="text-[9px] font-bold uppercase tracking-[0.15em]">PENDING</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<select class="bg-transparent border-none p-0 text-[10px] font-bold text-gray-400 focus:ring-0 uppercase cursor-pointer hover:text-white transition-colors">
+<option>Action</option>
+<option>APPROVE</option>
+<option>REJECT</option>
+</select>
+<button class="text-gray-600 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Order Row 2: Processing -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5 font-headline font-medium text-secondary-container text-sm tracking-widest">#ORD-0922-A</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-sm text-primary">person</span>
+</div>
+<div>
+<div class="text-xs font-bold uppercase tracking-tight">Elias_Thorne</div>
+<div class="text-[9px] text-gray-500 font-mono tracking-tighter">IP: 10.0.0.45</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-headline font-bold text-on-background">§ 12,800.50</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-900/20 border border-blue-500/30 text-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.2)]">
+<div class="w-1.5 h-1.5 bg-blue-500"></div>
+<span class="text-[9px] font-bold uppercase tracking-[0.15em]">PROCESSING</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<select class="bg-transparent border-none p-0 text-[10px] font-bold text-gray-400 focus:ring-0 uppercase cursor-pointer hover:text-white transition-colors">
+<option>Action</option>
+<option>FINALIZE</option>
+<option>HOLD</option>
+</select>
+<button class="text-gray-600 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Order Row 3: Completed -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5 font-headline font-medium text-secondary-container text-sm tracking-widest">#ORD-0899-C</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-sm text-primary">person</span>
+</div>
+<div>
+<div class="text-xs font-bold uppercase tracking-tight">S_Architect_Main</div>
+<div class="text-[9px] text-gray-500 font-mono tracking-tighter">IP: 127.0.0.1</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-headline font-bold text-on-background">§ 2,150.00</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-green-900/20 border border-green-500/30 text-green-500 shadow-[0_0_8px_rgba(34,197,94,0.2)]">
+<div class="w-1.5 h-1.5 bg-green-500"></div>
+<span class="text-[9px] font-bold uppercase tracking-[0.15em]">COMPLETED</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<select class="bg-transparent border-none p-0 text-[10px] font-bold text-gray-400 focus:ring-0 uppercase cursor-pointer hover:text-white transition-colors">
+<option>Action</option>
+<option>ARCHIVE</option>
+<option>REFUND</option>
+</select>
+<button class="text-gray-600 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Order Row 4: Cancelled -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-5 font-headline font-medium text-secondary-container text-sm tracking-widest">#ORD-0870-F</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-sm text-primary">person</span>
+</div>
+<div>
+<div class="text-xs font-bold uppercase tracking-tight">Null_User_7</div>
+<div class="text-[9px] text-gray-500 font-mono tracking-tighter">IP: 172.16.254.1</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 font-headline font-bold text-on-background">§ 940.00</td>
+<td class="px-6 py-5">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-red-900/20 border border-red-500/30 text-red-500 shadow-[0_0_8px_rgba(239,68,68,0.2)]">
+<div class="w-1.5 h-1.5 bg-red-500"></div>
+<span class="text-[9px] font-bold uppercase tracking-[0.15em]">CANCELLED</span>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-4">
+<select class="bg-transparent border-none p-0 text-[10px] font-bold text-gray-400 focus:ring-0 uppercase cursor-pointer hover:text-white transition-colors">
+<option>Action</option>
+<option>RESTORE</option>
+<option>PURGE</option>
+</select>
+<button class="text-gray-600 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer Logic -->
+<div class="mt-1 flex items-center justify-between bg-surface-container-low p-4">
+<div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+          Showing 1 - 4 of 1,240 results
+        </div>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-highest border border-outline-variant text-gray-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center bg-primary-container text-white border border-primary-container font-headline text-xs font-bold">
+            1
+          </button>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-highest border border-outline-variant text-gray-400 hover:text-primary transition-colors font-headline text-xs font-bold">
+            2
+          </button>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-highest border border-outline-variant text-gray-400 hover:text-primary transition-colors font-headline text-xs font-bold">
+            3
+          </button>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-highest border border-outline-variant text-gray-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] dark:bg-[#0e0e0e] flex justify-between items-center px-8 py-3 border-t border-[#1c1c1c] text-[#00f4fe] font-['Manrope'] text-[10px] uppercase tracking-[0.3em]">
+<div>
+        © 2024 SYNTHETIC_ARCHITECT // HARDWARE_OS
+      </div>
+<div class="flex gap-8">
+<a class="text-gray-600 hover:text-[#d2bbff] transition-colors" href="#">API_DOCS</a>
+<a class="text-[#00f4fe] underline" href="#">SYSTEM_STATUS</a>
+<a class="text-gray-600 hover:text-[#d2bbff] transition-colors" href="#">SECURITY_ENFORCED</a>
+</div>
+</footer>
+</main>
+<!-- Mobile Bottom Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#0e0e0e] border-t border-[#1c1c1c] flex justify-around items-center h-16 z-50">
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[8px] font-bold uppercase tracking-widest">Dash</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#00f4fe]">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-[8px] font-bold uppercase tracking-widest">Orders</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">memory</span>
+<span class="text-[8px] font-bold uppercase tracking-widest">Core</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[8px] font-bold uppercase tracking-widest">Set</span>
+</button>
+</nav>
+</body></html>

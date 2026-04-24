@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNTH_ARCHITECT | Secure Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#fface8",
+                        "outline": "#958da2",
+                        "secondary": "#e6feff",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#840076",
+                        "tertiary": "#fface8",
+                        "primary-fixed": "#eaddff",
+                        "primary-fixed-dim": "#d2bbff",
+                        "secondary-fixed-dim": "#00dce5",
+                        "surface-variant": "#353534",
+                        "on-surface-variant": "#ccc3d9",
+                        "on-background": "#e5e2e1",
+                        "on-primary": "#3e008e",
+                        "on-secondary-fixed-variant": "#004f53",
+                        "on-tertiary": "#5e0053",
+                        "on-tertiary-container": "#ffd8f0",
+                        "inverse-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "on-secondary-fixed": "#002021",
+                        "on-primary-container": "#ebddff",
+                        "surface-container": "#201f1f",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-container": "#b800a5",
+                        "surface-bright": "#393939",
+                        "primary-container": "#7b2ff7",
+                        "surface-tint": "#d2bbff",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#006c71",
+                        "on-secondary": "#003739",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#ffd7f0",
+                        "primary": "#d2bbff",
+                        "secondary-fixed": "#63f7ff",
+                        "on-tertiary-fixed": "#3a0033",
+                        "on-primary-fixed-variant": "#5900c6",
+                        "surface-container-highest": "#353534",
+                        "surface": "#131313",
+                        "secondary-container": "#00f4fe",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed": "#25005a",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#7423f0",
+                        "outline-variant": "#4a4456"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chamfer-card {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #7b2ff7; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-[#131313]/80 backdrop-blur-xl shadow-[0_4_20px_rgba(0,0,0,0.5)]">
+<div class="text-2xl font-bold tracking-widest text-[#d2bbff] drop-shadow-[0_0_8px_rgba(210,187,255,0.8)] font-['Space_Grotesk'] tracking-tighter uppercase">
+            SYNTH_ARCHITECT
+        </div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tighter uppercase text-xs">
+<a class="text-[#d2bbff]/70 hover:text-[#d2bbff] hover:drop-shadow-[0_0_10px_rgba(0,244,254,0.6)] transition-all duration-150" href="#">Home</a>
+<a class="text-[#d2bbff]/70 hover:text-[#d2bbff] hover:drop-shadow-[0_0_10px_rgba(0,244,254,0.6)] transition-all duration-150" href="#">Products</a>
+<a class="text-[#00f4fe] border-b-2 border-[#00f4fe] pb-1 hover:drop-shadow-[0_0_10px_rgba(0,244,254,0.6)] transition-all duration-150" href="#">Cart</a>
+<a class="text-[#d2bbff]/70 hover:text-[#d2bbff] hover:drop-shadow-[0_0_10px_rgba(0,244,254,0.6)] transition-all duration-150" href="#">Orders</a>
+<a class="text-[#d2bbff]/70 hover:text-[#d2bbff] hover:drop-shadow-[0_0_10px_rgba(0,244,254,0.6)] transition-all duration-150" href="#">Login</a>
+</div>
+<div class="flex items-center gap-4 text-[#d2bbff]">
+<span class="material-symbols-outlined cursor-pointer hover:text-[#00f4fe] transition-colors">shopping_cart</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-[#00f4fe] transition-colors">account_circle</span>
+</div>
+<div class="bg-gradient-to-r from-[#7b2ff7] to-[#00f4fe] h-[2px] w-full absolute bottom-0 left-0"></div>
+</nav>
+<main class="pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
+<header class="mb-12">
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter uppercase text-primary drop-shadow-[0_0_15px_rgba(210,187,255,0.3)]">
+                System_Terminal <span class="text-secondary-container">/ Checkout</span>
+</h1>
+<div class="flex items-center gap-2 mt-4 text-secondary-fixed-dim uppercase tracking-[0.2em] text-[10px] font-bold">
+<span class="w-2 h-2 bg-secondary-container animate-pulse"></span>
+                Secure Protocol Active
+            </div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Side: Items & Form -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Cart Section -->
+<section>
+<div class="flex items-baseline justify-between mb-6 border-b border-outline-variant/20 pb-2">
+<h2 class="font-headline text-xl uppercase tracking-widest text-on-surface-variant">01. Hardware_Inventory</h2>
+<span class="font-label text-xs text-outline">2 ITEMS DETECTED</span>
+</div>
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="bg-surface-container-low group flex flex-col md:flex-row items-center gap-6 p-4 border-l-2 border-primary-container hover:bg-surface-container transition-colors">
+<div class="w-32 h-32 bg-surface-container-highest flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-lighten opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Close-up of a high-end graphics card with glowing RGB fans and industrial metal casing in a dark studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARHvtyhclaMmRrZ402ogAGBnqot-kQPZnd_IWPR8y_jCL9C8dOcH-3yzvcmvSZPN_dG_97wfVxlBd6TxbXFKPEYz4xOYOXuaJVA13rvD5vx9X4ROA_XrGASlls2pFIf0rpD1H6qe5XK040noAjZhRjV3dl7Ix5JVmVAaqUtwgo_b-lluUhi5NZ6hGXJ0vOCXck12USmmF7KzZTAZsUSaSGQLCteRFxGLdFBUeRycqDfqruqrnq-jwHZ1fpAG-P5k2Jhzxkrc5Vr_8"/>
+</div>
+<div class="flex-grow space-y-1">
+<span class="text-[10px] font-bold text-secondary-container uppercase tracking-widest">Core Component</span>
+<h3 class="font-headline text-xl text-primary uppercase">NEURAL_LINK GPU X-900</h3>
+<p class="text-xs text-outline max-w-xs">24GB VRAM, Tensor Architecture, Cryo-Cooling pre-installed.</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center border border-outline-variant/30">
+<button class="p-2 hover:bg-primary-container text-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="px-4 font-label text-sm">01</span>
+<button class="p-2 hover:bg-secondary-container text-secondary-container hover:text-black transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="text-right min-w-[100px]">
+<div class="text-xs text-outline uppercase tracking-tighter">Subtotal</div>
+<div class="font-headline text-lg text-secondary-fixed font-bold">$1,499.00</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-low group flex flex-col md:flex-row items-center gap-6 p-4 border-l-2 border-secondary-container hover:bg-surface-container transition-colors">
+<div class="w-32 h-32 bg-surface-container-highest flex-shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-lighten opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Futuristic mechanical keyboard with transparent keycaps and neon cyan backlighting on a matte black desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB56DCh0UDxzNQj3jVcev-b_5aeS2SSn6CBdmSsSoMYB1cSQtFGnuHH1ZPTPrVQIGTK3__uaFLohfDtQiJqLr7ulq1sXUMTxpBxy0zxhsY-c8Ls0ufLinokkAniTNoYdEOnDEJJQe0sZCJJeA-j5XlLCnLAJwD1-uLKXqotIhfqDnW9qcVvZW5NK8zVVyNllkIn-Zhuwvv0MYCzNp2K65TnDLcO96BSPjtej62gWLNp2cwrxnLzEo3aNEHAMT3ACbsnRLY_rZfkSi4"/>
+</div>
+<div class="flex-grow space-y-1">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Interface Module</span>
+<h3 class="font-headline text-xl text-primary uppercase">SYNTH_KEY MECHANICAL V3</h3>
+<p class="text-xs text-outline max-w-xs">Optical switches, tactile feedback, magnetic wrist rest.</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center border border-outline-variant/30">
+<button class="p-2 hover:bg-primary-container text-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="px-4 font-label text-sm">01</span>
+<button class="p-2 hover:bg-secondary-container text-secondary-container hover:text-black transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="text-right min-w-[100px]">
+<div class="text-xs text-outline uppercase tracking-tighter">Subtotal</div>
+<div class="font-headline text-lg text-secondary-fixed font-bold">$249.00</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Checkout Form -->
+<section>
+<div class="flex items-baseline justify-between mb-8 border-b border-outline-variant/20 pb-2">
+<h2 class="font-headline text-xl uppercase tracking-widest text-on-surface-variant">02. Logistical_Directives</h2>
+<span class="font-label text-xs text-outline">INPUT REQUIRED</span>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+<div class="space-y-2 group">
+<label class="text-[10px] uppercase tracking-[0.3em] font-bold text-outline group-focus-within:text-secondary-container transition-colors">Full_Name</label>
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline-variant focus:ring-0 focus:border-secondary-container text-secondary-fixed placeholder:text-outline-variant font-label text-lg transition-all px-0 py-2" placeholder="ARCHITECT_01" type="text"/>
+</div>
+<div class="space-y-2 group">
+<label class="text-[10px] uppercase tracking-[0.3em] font-bold text-outline group-focus-within:text-secondary-container transition-colors">Comms_ID (Phone)</label>
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline-variant focus:ring-0 focus:border-secondary-container text-secondary-fixed placeholder:text-outline-variant font-label text-lg transition-all px-0 py-2" placeholder="+1 (000) 000-0000" type="tel"/>
+</div>
+<div class="md:col-span-2 space-y-2 group">
+<label class="text-[10px] uppercase tracking-[0.3em] font-bold text-outline group-focus-within:text-secondary-container transition-colors">Primary_Node (Address)</label>
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline-variant focus:ring-0 focus:border-secondary-container text-secondary-fixed placeholder:text-outline-variant font-label text-lg transition-all px-0 py-2" placeholder="Sector 7, Grid 452, Neo-Tokyo Cluster" type="text"/>
+</div>
+<div class="space-y-2 group">
+<label class="text-[10px] uppercase tracking-[0.3em] font-bold text-outline group-focus-within:text-secondary-container transition-colors">City_Sector</label>
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline-variant focus:ring-0 focus:border-secondary-container text-secondary-fixed placeholder:text-outline-variant font-label text-lg transition-all px-0 py-2" placeholder="Neo-Tokyo" type="text"/>
+</div>
+<div class="space-y-2 group">
+<label class="text-[10px] uppercase tracking-[0.3em] font-bold text-outline group-focus-within:text-secondary-container transition-colors">Postal_Code</label>
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline-variant focus:ring-0 focus:border-secondary-container text-secondary-fixed placeholder:text-outline-variant font-label text-lg transition-all px-0 py-2" placeholder="90210-GEN" type="text"/>
+</div>
+</form>
+</section>
+</div>
+<!-- Right Side: Order Summary -->
+<aside class="lg:col-span-4 sticky top-24">
+<div class="bg-surface-container-high p-8 relative overflow-hidden">
+<!-- Background Accent -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/10 blur-3xl rounded-full -mr-16 -mt-16"></div>
+<h2 class="font-headline text-2xl font-bold uppercase tracking-tighter text-secondary-container mb-8">Summary_Report</h2>
+<div class="space-y-4 font-label">
+<div class="flex justify-between text-sm">
+<span class="text-outline uppercase">Subtotal</span>
+<span class="text-on-surface">$1,748.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-outline uppercase">Freight_Charge</span>
+<span class="text-on-surface">$45.00</span>
+</div>
+<div class="flex justify-between text-sm border-b border-outline-variant/20 pb-4">
+<span class="text-outline uppercase">Node_Tax</span>
+<span class="text-on-surface">$139.84</span>
+</div>
+<div class="flex justify-between items-baseline pt-4">
+<span class="text-primary font-bold uppercase tracking-[0.2em] text-xs">Total_Allocation</span>
+<span class="text-3xl font-bold text-secondary-fixed drop-shadow-[0_0_10px_rgba(99,247,255,0.4)]">$1,932.84</span>
+</div>
+</div>
+<div class="mt-10 space-y-4">
+<div class="bg-surface-container-lowest p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-container">verified_user</span>
+<div class="text-[10px] text-outline-variant leading-tight uppercase font-bold">
+                                All transactions encrypted via 2048-bit quantum-safe protocols. System integrity verified.
+                            </div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary-container to-secondary-container text-black font-headline font-extrabold uppercase tracking-widest py-5 text-sm hover:brightness-110 active:scale-[0.98] transition-all relative group overflow-hidden">
+<span class="relative z-10">Confirm_Execution</span>
+<div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-12"></div>
+</button>
+<p class="text-center text-[10px] text-outline-variant uppercase tracking-widest mt-4">
+                            Proceeding indicates agreement to the synthetic terms of service.
+                        </p>
+</div>
+</div>
+<!-- Extra Detail Card -->
+<div class="mt-4 bg-surface-container-low p-6 border-l-4 border-outline-variant flex items-center justify-between">
+<div>
+<div class="text-[10px] text-outline font-bold uppercase tracking-widest">Est_Delivery</div>
+<div class="text-primary-fixed font-headline text-lg">24-48 HOURS</div>
+</div>
+<span class="material-symbols-outlined text-3xl text-outline-variant">local_shipping</span>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#0e0e0e] border-t border-[#7b2ff7]/20 mt-20">
+<div class="font-['Manrope'] text-xs tracking-widest uppercase text-[#d2bbff]/40">
+            © 2024 SYNTHETIC ARCHITECT. ALL SYSTEMS OPERATIONAL.
+        </div>
+<div class="flex gap-8 font-['Manrope'] text-xs tracking-widest uppercase">
+<a class="text-[#d2bbff]/40 hover:text-[#00f4fe] transition-colors" href="#">Support</a>
+<a class="text-[#d2bbff]/40 hover:text-[#00f4fe] transition-colors" href="#">Contact</a>
+<a class="text-[#d2bbff]/40 hover:text-[#00f4fe] transition-colors" href="#">Privacy</a>
+<a class="text-[#d2bbff]/40 hover:text-[#00f4fe] transition-colors" href="#">Terms</a>
+</div>
+</footer>
+</body></html>

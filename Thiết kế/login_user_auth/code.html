@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNTH_ARCHITECT // LOGIN</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#006c71",
+                        "surface": "#131313",
+                        "tertiary": "#fface8",
+                        "outline-variant": "#4a4456",
+                        "on-secondary-fixed-variant": "#004f53",
+                        "tertiary-fixed-dim": "#fface8",
+                        "primary-fixed": "#eaddff",
+                        "primary": "#d2bbff",
+                        "outline": "#958da2",
+                        "on-tertiary-fixed": "#3a0033",
+                        "tertiary-container": "#b800a5",
+                        "primary-container": "#7b2ff7",
+                        "inverse-on-surface": "#313030",
+                        "background": "#131313",
+                        "on-tertiary": "#5e0053",
+                        "on-primary": "#3e008e",
+                        "secondary-fixed-dim": "#00dce5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface-variant": "#ccc3d9",
+                        "secondary-fixed": "#63f7ff",
+                        "surface-dim": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#d2bbff",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container": "#201f1f",
+                        "secondary": "#e6feff",
+                        "on-primary-fixed": "#25005a",
+                        "on-tertiary-container": "#ffd8f0",
+                        "on-error": "#690005",
+                        "on-background": "#e5e2e1",
+                        "surface-variant": "#353534",
+                        "on-secondary": "#003739",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#ebddff",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#002021",
+                        "secondary-container": "#00f4fe",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-primary-fixed-variant": "#5900c6",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed-variant": "#840076",
+                        "tertiary-fixed": "#ffd7f0",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#7423f0"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            background-image: 
+                linear-gradient(rgba(123, 47, 247, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(123, 47, 247, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .circuit-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #7b2ff7, transparent);
+            height: 1px;
+            width: 100%;
+            opacity: 0.3;
+        }
+        .circuit-line-v {
+            position: absolute;
+            background: linear-gradient(180deg, transparent, #00f4fe, transparent);
+            width: 1px;
+            height: 100%;
+            opacity: 0.3;
+        }
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: rgba(53, 53, 52, 0.6);
+            clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%);
+        }
+        .neon-glow-purple {
+            box-shadow: 0 0 20px rgba(210, 187, 255, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface selection:bg-primary-container selection:text-white min-h-screen flex items-center justify-center overflow-hidden">
+<!-- Decorative Circuitry Elements -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<div class="circuit-line top-[20%] left-0"></div>
+<div class="circuit-line top-[80%] left-0"></div>
+<div class="circuit-line-v left-[15%] top-0"></div>
+<div class="circuit-line-v left-[85%] top-0"></div>
+<div class="absolute top-1/4 right-10 w-64 h-64 bg-primary-container/10 blur-[100px]"></div>
+<div class="absolute bottom-1/4 left-10 w-64 h-64 bg-secondary-container/10 blur-[100px]"></div>
+</div>
+<!-- Login Container -->
+<main class="relative z-10 w-full max-w-md px-6">
+<!-- Brand Header -->
+<div class="text-center mb-10">
+<h1 class="font-headline text-4xl font-bold tracking-tighter text-primary drop-shadow-[0_0_8px_rgba(210,187,255,0.5)]">
+                SYNTH_ARCHITECT
+            </h1>
+<p class="font-headline text-[10px] tracking-[0.3em] uppercase text-secondary-fixed mt-2">
+                SYSTEM_ACCESS_TERMINAL_V4.0
+            </p>
+</div>
+<!-- Glassmorphic Card -->
+<div class="glass-card neon-glow-purple p-8 border border-outline-variant/20 relative group transition-all duration-500">
+<!-- Ghost Border Fallback -->
+<div class="absolute inset-0 border border-secondary-container/0 group-hover:border-secondary-container/20 transition-colors pointer-events-none"></div>
+<header class="mb-8">
+<h2 class="font-headline text-xl font-bold text-on-surface uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="lock_open">lock_open</span>
+                    IDENTITY_CHECK
+                </h2>
+<div class="h-[1px] w-full bg-gradient-to-r from-primary-container to-transparent mt-4"></div>
+</header>
+<form class="space-y-8">
+<!-- Architect ID Field -->
+<div class="space-y-2">
+<label class="font-headline text-[10px] tracking-widest uppercase text-outline" for="architect_id">ARCHITECT_ID</label>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant py-3 px-0 focus:ring-0 focus:border-secondary-container text-secondary-fixed placeholder:text-outline/30 font-body transition-all" id="architect_id" placeholder="USER@SYNTH.ARCH" type="email"/>
+<span class="absolute right-0 top-3 text-outline/50 material-symbols-outlined" data-icon="alternate_email">alternate_email</span>
+</div>
+</div>
+<!-- Secure Protocol Field -->
+<div class="space-y-2">
+<label class="font-headline text-[10px] tracking-widest uppercase text-outline" for="secure_protocol">SECURE_PROTOCOL</label>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant py-3 px-0 focus:ring-0 focus:border-secondary-container text-secondary-fixed placeholder:text-outline/30 font-body transition-all" id="secure_protocol" placeholder="••••••••••••" type="password"/>
+<span class="absolute right-0 top-3 text-outline/50 material-symbols-outlined" data-icon="key">key</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full group relative overflow-hidden bg-gradient-to-r from-primary-container to-secondary-container p-[1px] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,244,254,0.4)] active:scale-[0.98]" type="submit">
+<div class="bg-surface py-4 flex items-center justify-center gap-3 transition-colors group-hover:bg-transparent">
+<span class="font-headline font-bold text-sm uppercase tracking-widest text-secondary-fixed group-hover:text-surface">INITIALIZE_AUTH</span>
+<span class="material-symbols-outlined text-secondary-fixed group-hover:text-surface text-sm" data-icon="bolt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</button>
+</form>
+<footer class="mt-8 flex flex-col gap-4 text-center">
+<a class="font-headline text-[10px] tracking-widest text-outline hover:text-primary transition-colors flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined text-xs" data-icon="settings_backup_restore">settings_backup_restore</span>
+                    RECOVER_CREDENTIALS
+                </a>
+<div class="flex items-center gap-4 px-4">
+<div class="h-[1px] flex-1 bg-outline-variant/30"></div>
+<span class="font-headline text-[10px] text-outline/50">OR</span>
+<div class="h-[1px] flex-1 bg-outline-variant/30"></div>
+</div>
+<a class="group flex items-center justify-center gap-2 font-headline text-xs font-bold text-secondary-fixed hover:text-primary transition-colors uppercase tracking-tight" href="#">
+                    Register New Node
+                    <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</footer>
+</div>
+<!-- Technical Metadata -->
+<div class="mt-12 flex justify-between items-center opacity-30 px-2">
+<div class="flex flex-col gap-1">
+<span class="font-headline text-[8px] tracking-tighter uppercase text-outline">Lat: 37.7749° N</span>
+<span class="font-headline text-[8px] tracking-tighter uppercase text-outline">Lon: 122.4194° W</span>
+</div>
+<div class="text-right flex flex-col gap-1">
+<span class="font-headline text-[8px] tracking-tighter uppercase text-outline">Protocol: TLS_1.3_CHACHA20_POLY1305</span>
+<span class="font-headline text-[8px] tracking-tighter uppercase text-outline">Encryption: AES-256-GCM</span>
+</div>
+</div>
+</main>
+<!-- Floating Hardware Visual Element (Left) -->
+<div class="absolute left-[-5%] top-[20%] hidden xl:block pointer-events-none">
+<div class="w-96 h-[600px] bg-surface-container-low border border-outline-variant/10 p-6 flex flex-col justify-between opacity-40">
+<div class="w-full aspect-square bg-surface-container-highest flex items-center justify-center">
+<img alt="abstract technical hardware component" class="w-full h-full object-cover opacity-60 mix-blend-screen" data-alt="Close-up of high-end futuristic computer hardware with glowing purple LEDs and intricate circuit patterns on dark metal surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5oj2gQVfHuC_osBaNpdsvOXmoPU1kmTn_RBpjv09usyaFzOaEkkx4wUM6mm_YB72dMnVZun8uq7_efUeovDtjrsuYYcDh95iHCU4kEdnTFKPm0HYfvD8JHpCMv8whruQJmmdoKZnqVljIBk_amqggoBuaTbCgi7jECxdrPso_TSmXrMVb5NCF7mZRrhBz-Oag_BrfaPHjIA7v51kyA8LPeAF9F6mqeoes5YrKmlYWkFpuuqQwuo7mZS8BJTezrwEsfGsYVsJDhzg"/>
+</div>
+<div class="space-y-4">
+<div class="h-2 w-full bg-primary-container/20"></div>
+<div class="h-2 w-3/4 bg-primary-container/20"></div>
+<div class="h-2 w-1/2 bg-primary-container/20"></div>
+</div>
+</div>
+</div>
+<!-- Floating Hardware Visual Element (Right) -->
+<div class="absolute right-[-5%] bottom-[10%] hidden xl:block pointer-events-none">
+<div class="w-80 h-[400px] bg-surface-container-low border border-outline-variant/10 p-6 flex flex-col justify-between opacity-40" style="clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 10%);">
+<div class="space-y-4 mb-8">
+<div class="flex justify-between font-headline text-[10px] text-primary">
+<span>CORE_TEMP</span>
+<span>32.4°C</span>
+</div>
+<div class="h-1 w-full bg-surface-container-highest">
+<div class="h-full bg-secondary-container w-[40%] shadow-[0_0_10px_#00f4fe]"></div>
+</div>
+</div>
+<img alt="abstract cooling fan" class="w-full aspect-square object-cover opacity-60" data-alt="Sleek neon cyan circular glowing element resembling a high-tech cooling fan or turbine with motion blur effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR4kW0kqozEkX2IFnsrmmzevw9XVYj9Z93q8K6hKaa5p6PPfvlqVNm87fNg6I1wlqXoYH7ytm5jgCDGEar6aDfJCXdiiAVkaZ5X-YMjoNR-SqAkooBk3zI6TRHqtPHppkDeCDV1N3a1voZUffzYsb0vjB_fw19hNxmLyZzuaKP6Oc4j9M8HyrMdKJER3q0m3JxFIKZb_VOJAUAFwK8hgxb63o0QDYKun5OvXtvUilq6BGh-OMOMuWiz6_5IlqIiK4oTGXH3RDwQxw"/>
+</div>
+</div>
+<!-- Bottom Footer (from JSON) -->
+<footer class="fixed bottom-0 left-0 w-full py-6 px-8 flex justify-between items-center border-t border-[#7b2ff7]/10 bg-[#0e0e0e] z-50">
+<span class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#00f4fe]">© 2024 SYNTH_ARCHITECT // HARDWARE_DIVISION</span>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#d2bbff]/40 hover:text-[#d2bbff] transition-colors" href="#">Terms_of_Service</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#d2bbff]/40 hover:text-[#d2bbff] transition-colors" href="#">Privacy_Protocol</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#d2bbff]/40 hover:text-[#d2bbff] transition-colors" href="#">Support_Node</a>
+</div>
+</footer>
+</body></html>

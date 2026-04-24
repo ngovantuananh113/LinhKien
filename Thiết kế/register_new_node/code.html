@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNTH_ARCHITECT // REGISTRATION</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#006c71",
+              "surface": "#131313",
+              "tertiary": "#fface8",
+              "outline-variant": "#4a4456",
+              "on-secondary-fixed-variant": "#004f53",
+              "tertiary-fixed-dim": "#fface8",
+              "primary-fixed": "#eaddff",
+              "primary": "#d2bbff",
+              "outline": "#958da2",
+              "on-tertiary-fixed": "#3a0033",
+              "tertiary-container": "#b800a5",
+              "primary-container": "#7b2ff7",
+              "inverse-on-surface": "#313030",
+              "background": "#131313",
+              "on-tertiary": "#5e0053",
+              "on-primary": "#3e008e",
+              "secondary-fixed-dim": "#00dce5",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-high": "#2a2a2a",
+              "on-surface-variant": "#ccc3d9",
+              "secondary-fixed": "#63f7ff",
+              "surface-dim": "#131313",
+              "on-error-container": "#ffdad6",
+              "surface-tint": "#d2bbff",
+              "surface-container-low": "#1c1b1b",
+              "surface-container": "#201f1f",
+              "secondary": "#e6feff",
+              "on-primary-fixed": "#25005a",
+              "on-tertiary-container": "#ffd8f0",
+              "on-error": "#690005",
+              "on-background": "#e5e2e1",
+              "surface-variant": "#353534",
+              "on-secondary": "#003739",
+              "surface-container-highest": "#353534",
+              "on-primary-container": "#ebddff",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "on-surface": "#e5e2e1",
+              "on-secondary-fixed": "#002021",
+              "secondary-container": "#00f4fe",
+              "primary-fixed-dim": "#d2bbff",
+              "on-primary-fixed-variant": "#5900c6",
+              "surface-bright": "#393939",
+              "on-tertiary-fixed-variant": "#840076",
+              "tertiary-fixed": "#ffd7f0",
+              "inverse-surface": "#e5e2e1",
+              "inverse-primary": "#7423f0"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chamfer-card {
+            clip-path: polygon(0% 0%, 92% 0%, 100% 8%, 100% 100%, 8% 100%, 0% 92%);
+        }
+        .circuit-line {
+            background: linear-gradient(90deg, transparent, #7b2ff7, #00f4fe, transparent);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-fixed">
+<!-- Background Layer with Decorative Circuit Energy -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary-container/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-secondary-container/10 blur-[100px] rounded-full"></div>
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 min-h-screen flex flex-col items-center justify-center p-6">
+<!-- Brand Anchor -->
+<header class="mb-12 text-center">
+<h1 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-primary drop-shadow-[0_0_12px_rgba(210,187,255,0.4)]">
+                SYNTH_ARCHITECT
+            </h1>
+<p class="font-headline text-xs tracking-[0.3em] uppercase text-secondary-fixed mt-2 opacity-80">
+                System Interface // Node Registration
+            </p>
+</header>
+<!-- Registration Container -->
+<div class="w-full max-w-xl relative">
+<!-- Decorative Accent Lines -->
+<div class="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-secondary-container/40"></div>
+<div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-primary-container/40"></div>
+<!-- The Form Card -->
+<div class="chamfer-card bg-surface-container-highest/60 backdrop-blur-xl p-8 md:p-12 border border-outline-variant/20 shadow-2xl">
+<div class="flex justify-between items-start mb-10">
+<div>
+<h2 class="font-headline text-2xl font-bold text-on-surface-variant uppercase tracking-tight">Access Protocol</h2>
+<div class="h-1 w-12 bg-secondary-container mt-2"></div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-headline text-[10px] tracking-widest text-secondary-fixed">LIVE_LINK</span>
+</div>
+</div>
+<form class="space-y-8">
+<!-- Name Input -->
+<div class="group relative">
+<label class="font-headline text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">FULL_NAME</label>
+<div class="flex items-center border-b-2 border-outline-variant group-focus-within:border-secondary-container transition-all duration-300">
+<span class="material-symbols-outlined text-outline group-focus-within:text-secondary-fixed mr-3">person_filled</span>
+<input class="bg-transparent border-none w-full py-3 text-on-surface focus:ring-0 placeholder:text-outline-variant/50 font-body text-sm uppercase tracking-wider" placeholder="ENTER SUBJECT IDENTITY" type="text"/>
+</div>
+</div>
+<!-- Email Input -->
+<div class="group relative">
+<label class="font-headline text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">ARCHITECT_ID</label>
+<div class="flex items-center border-b-2 border-outline-variant group-focus-within:border-secondary-container transition-all duration-300">
+<span class="material-symbols-outlined text-outline group-focus-within:text-secondary-fixed mr-3">fingerprint</span>
+<input class="bg-transparent border-none w-full py-3 text-on-surface focus:ring-0 placeholder:text-outline-variant/50 font-body text-sm uppercase tracking-wider" placeholder="LINK@NETWORK.SYNTH" type="email"/>
+</div>
+</div>
+<!-- Grid for Phone and Password -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group relative">
+<label class="font-headline text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">COMM_CHANNEL</label>
+<div class="flex items-center border-b-2 border-outline-variant group-focus-within:border-secondary-container transition-all duration-300">
+<span class="material-symbols-outlined text-outline group-focus-within:text-secondary-fixed mr-3">settings_input_component</span>
+<input class="bg-transparent border-none w-full py-3 text-on-surface focus:ring-0 placeholder:text-outline-variant/50 font-body text-sm" placeholder="+00 000 000" type="tel"/>
+</div>
+</div>
+<div class="group relative">
+<label class="font-headline text-[10px] tracking-[0.2em] text-outline uppercase mb-2 block">SECRET_ENCRYPTION</label>
+<div class="flex items-center border-b-2 border-outline-variant group-focus-within:border-secondary-container transition-all duration-300">
+<span class="material-symbols-outlined text-outline group-focus-within:text-secondary-fixed mr-3">encrypted</span>
+<input class="bg-transparent border-none w-full py-3 text-on-surface focus:ring-0 placeholder:text-outline-variant/50 font-body text-sm" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<!-- Terms Checkbox -->
+<div class="flex items-start gap-3 pt-2">
+<div class="mt-1">
+<input class="w-4 h-4 rounded-none border-outline-variant bg-surface-container text-primary-container focus:ring-offset-surface focus:ring-primary-container" id="terms" type="checkbox"/>
+</div>
+<label class="text-[10px] uppercase tracking-wider text-outline leading-tight" for="terms">
+                            I accept the <span class="text-secondary-fixed cursor-pointer hover:underline">Neural Transmission Protocols</span> and data harvesting synchronization.
+                        </label>
+</div>
+<!-- Submit Button -->
+<div class="pt-6">
+<button class="w-full group relative overflow-hidden bg-gradient-to-r from-primary-container to-secondary-container p-[1px] shadow-[0_0_20px_rgba(123,47,247,0.3)] hover:shadow-[0_0_30px_rgba(0,244,254,0.4)] transition-all duration-500" type="submit">
+<div class="bg-surface-container-lowest group-hover:bg-transparent transition-colors duration-300 py-4 px-8 flex justify-center items-center gap-3">
+<span class="font-headline font-bold text-sm tracking-[0.2em] text-on-primary-container uppercase">CREATE_NODE</span>
+<span class="material-symbols-outlined text-secondary-fixed group-hover:text-on-primary-container transition-colors">bolt</span>
+</div>
+</button>
+</div>
+</form>
+<!-- Footer Link -->
+<div class="mt-10 flex justify-center items-center gap-4">
+<div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-outline-variant/30"></div>
+<a class="font-headline text-[10px] tracking-[0.2em] text-outline hover:text-primary transition-colors uppercase group flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                        Return to Login
+                    </a>
+<div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-outline-variant/30"></div>
+</div>
+</div>
+</div>
+<!-- Decorative Hardware Elements -->
+<div class="mt-12 flex items-center gap-8 opacity-40">
+<div class="flex flex-col gap-1">
+<div class="w-16 h-1 bg-primary-container/40"></div>
+<div class="w-8 h-1 bg-secondary-container/40"></div>
+</div>
+<div class="text-[10px] font-headline tracking-[0.4em] text-outline-variant uppercase">
+                Hardware_Revision: v2.04.8
+            </div>
+<div class="flex flex-col gap-1 items-end">
+<div class="w-16 h-1 bg-primary-container/40"></div>
+<div class="w-8 h-1 bg-secondary-container/40"></div>
+</div>
+</div>
+</main>
+<!-- Footer Component from Blueprint -->
+<footer class="w-full py-6 px-8 flex justify-between items-center border-t border-[#7b2ff7]/10 relative z-10 bg-[#0e0e0e]">
+<div class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#00f4fe]">
+            © 2024 SYNTH_ARCHITECT // HARDWARE_DIVISION
+        </div>
+<div class="flex gap-6">
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#d2bbff]/40 hover:text-[#d2bbff] transition-colors" href="#">Terms_of_Service</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#d2bbff]/40 hover:text-[#d2bbff] transition-colors" href="#">Privacy_Protocol</a>
+<a class="font-['Manrope'] text-[10px] tracking-widest uppercase text-[#d2bbff]/40 hover:text-[#d2bbff] transition-colors" href="#">Support_Node</a>
+</div>
+</footer>
+<!-- Decorative Corner Visual -->
+<div class="fixed bottom-12 right-12 opacity-20 pointer-events-none hidden xl:block">
+<img alt="Tech circuit detail" class="w-64 grayscale contrast-150 mix-blend-screen" data-alt="abstract digital circuitry glowing with neon purple and cyan light on a black matte surface hyper detailed macro tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSxR48UHUTRxvpnl5BliKAiwjVJQywDsYjCfWJ-vuInSSW2lu1vnbWBK229LIi-IP8tMZpJfG0d7kk5JSX05B7dRu3Y7GSf5aA3tmj-qkXC1mCZoYABqZrh7k_7YjKfFNol3VZd-OlA4LeC_FdkWGeDcca4rBHRqqAZblhR7KnTc02oOxJbXwv29X2JJOsnvSCdaxGveUdtkIuZZxJkEL4UqRwvFcXPmx5PKriTXKZJitRJ9dt3hlXkKSGGbPUq9ewEhT90o460v4"/>
+</div>
+</body></html>

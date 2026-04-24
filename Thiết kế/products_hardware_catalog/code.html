@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#fface8",
+              "outline": "#958da2",
+              "secondary": "#e6feff",
+              "on-surface": "#e5e2e1",
+              "on-tertiary-fixed-variant": "#840076",
+              "tertiary": "#fface8",
+              "primary-fixed": "#eaddff",
+              "primary-fixed-dim": "#d2bbff",
+              "secondary-fixed-dim": "#00dce5",
+              "surface-variant": "#353534",
+              "on-surface-variant": "#ccc3d9",
+              "on-background": "#e5e2e1",
+              "on-primary": "#3e008e",
+              "on-secondary-fixed-variant": "#004f53",
+              "on-tertiary": "#5e0053",
+              "on-tertiary-container": "#ffd8f0",
+              "inverse-surface": "#e5e2e1",
+              "background": "#131313",
+              "on-secondary-fixed": "#002021",
+              "on-primary-container": "#ebddff",
+              "surface-container": "#201f1f",
+              "inverse-on-surface": "#313030",
+              "tertiary-container": "#b800a5",
+              "surface-bright": "#393939",
+              "primary-container": "#7b2ff7",
+              "surface-tint": "#d2bbff",
+              "surface-container-low": "#1c1b1b",
+              "on-error-container": "#ffdad6",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-container": "#006c71",
+              "on-secondary": "#003739",
+              "surface-container-high": "#2a2a2a",
+              "on-error": "#690005",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#ffd7f0",
+              "primary": "#d2bbff",
+              "secondary-fixed": "#63f7ff",
+              "on-tertiary-fixed": "#3a0033",
+              "on-primary-fixed-variant": "#5900c6",
+              "surface-container-highest": "#353534",
+              "surface": "#131313",
+              "secondary-container": "#00f4fe",
+              "surface-dim": "#131313",
+              "on-primary-fixed": "#25005a",
+              "error": "#ffb4ab",
+              "inverse-primary": "#7423f0",
+              "outline-variant": "#4a4456"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chamfered {
+            clip-path: polygon(0% 0%, 92% 0%, 100% 8%, 100% 100%, 8% 100%, 0% 92%);
+        }
+        .circuit-line {
+            background: linear-gradient(90deg, transparent, #00f4fe, transparent);
+            height: 1px;
+            width: 100%;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            background: #00f4fe;
+            cursor: pointer;
+            box-shadow: 0 0 10px #00f4fe;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-[#131313]/80 backdrop-blur-xl shadow-[0_4_20px_rgba(0,0,0,0.5)]">
+<div class="text-2xl font-bold tracking-widest text-[#d2bbff] drop-shadow-[0_0_8px_rgba(210,187,255,0.8)] font-['Space_Grotesk'] uppercase">
+            SYNTH_ARCHITECT
+        </div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tighter uppercase">
+<a class="text-[#d2bbff]/70 hover:text-[#d2bbff] hover:drop-shadow-[0_0_10px_rgba(0,244,254,0.6)] transition-all duration-150" href="#">Home</a>
+<a class="text-[#00f4fe] border-b-2 border-[#00f4fe] pb-1 hover:drop-shadow-[0_0_10px_rgba(0,244,254,0.6)] transition-all duration-150" href="#">Products</a>
+<a class="text-[#d2bbff]/70 hover:text-[#d2bbff] hover:drop-shadow-[0_0_10px_rgba(0,244,254,0.6)] transition-all duration-150" href="#">Cart</a>
+<a class="text-[#d2bbff]/70 hover:text-[#d2bbff] hover:drop-shadow-[0_0_10px_rgba(0,244,254,0.6)] transition-all duration-150" href="#">Orders</a>
+<a class="text-[#d2bbff]/70 hover:text-[#d2bbff] hover:drop-shadow-[0_0_10px_rgba(0,244,254,0.6)] transition-all duration-150" href="#">Login</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#d2bbff] hover:text-[#00f4fe] transition-all">shopping_cart</button>
+<button class="material-symbols-outlined text-[#d2bbff] hover:text-[#00f4fe] transition-all">account_circle</button>
+</div>
+<div class="bg-gradient-to-r from-[#7b2ff7] to-[#00f4fe] h-[2px] w-full absolute bottom-0 left-0"></div>
+</nav>
+<main class="pt-24 min-h-screen flex flex-col md:flex-row">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-80 p-8 bg-surface-container-low border-r border-outline-variant/20">
+<div class="sticky top-28">
+<div class="flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-secondary-container">filter_list</span>
+<h2 class="font-headline text-xl uppercase tracking-widest text-primary">System Filters</h2>
+</div>
+<!-- Category Section -->
+<div class="mb-10">
+<h3 class="font-label text-xs uppercase tracking-[0.2em] text-outline mb-4">Core Components</h3>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="w-4 h-4 border border-outline-variant peer-checked:bg-secondary-container peer-checked:border-secondary-container transition-all"></div>
+<span class="ml-3 text-sm font-body uppercase tracking-tight group-hover:text-secondary transition-colors">Processors (CPU)</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input checked="" class="hidden peer" type="checkbox"/>
+<div class="w-4 h-4 border border-outline-variant peer-checked:bg-secondary-container peer-checked:border-secondary-container transition-all"></div>
+<span class="ml-3 text-sm font-body uppercase tracking-tight text-secondary transition-colors">Graphics Cards (GPU)</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="w-4 h-4 border border-outline-variant peer-checked:bg-secondary-container peer-checked:border-secondary-container transition-all"></div>
+<span class="ml-3 text-sm font-body uppercase tracking-tight group-hover:text-secondary transition-colors">Memory (RAM)</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="w-4 h-4 border border-outline-variant peer-checked:bg-secondary-container peer-checked:border-secondary-container transition-all"></div>
+<span class="ml-3 text-sm font-body uppercase tracking-tight group-hover:text-secondary transition-colors">Storage (SSD)</span>
+</label>
+</div>
+</div>
+<!-- Price Range Section -->
+<div class="mb-10">
+<h3 class="font-label text-xs uppercase tracking-[0.2em] text-outline mb-6">Budget Allocation</h3>
+<div class="px-2">
+<input class="w-full h-1 bg-surface-container-highest appearance-none cursor-pointer" max="5000" min="0" step="100" type="range"/>
+<div class="flex justify-between mt-4 font-headline text-xs text-secondary-fixed">
+<span>$0.00</span>
+<span>$5,000.00</span>
+</div>
+</div>
+</div>
+<!-- Specs Section -->
+<div class="mb-10">
+<h3 class="font-label text-xs uppercase tracking-[0.2em] text-outline mb-4">Architecture</h3>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 bg-surface-container-highest text-[10px] font-headline uppercase tracking-widest border border-outline-variant/30 hover:border-secondary-container hover:text-secondary-container transition-all">NVIDIA</button>
+<button class="py-2 px-3 bg-surface-container-highest text-[10px] font-headline uppercase tracking-widest border border-outline-variant/30 hover:border-secondary-container hover:text-secondary-container transition-all">AMD</button>
+<button class="py-2 px-3 bg-surface-container-highest text-[10px] font-headline uppercase tracking-widest border border-outline-variant/30 hover:border-secondary-container hover:text-secondary-container transition-all">INTEL</button>
+<button class="py-2 px-3 bg-surface-container-highest text-[10px] font-headline uppercase tracking-widest border border-outline-variant/30 hover:border-secondary-container hover:text-secondary-container transition-all">ARM</button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<section class="flex-1 p-8 md:p-12 bg-surface">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h1 class="font-headline text-4xl md:text-6xl font-bold uppercase tracking-tighter text-on-surface">Hardware Modules</h1>
+<p class="font-body text-outline mt-2 tracking-widest uppercase text-xs">Viewing 24 items in <span class="text-secondary-container">High-End Graphics</span></p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-high border border-outline-variant/20 font-label text-xs uppercase tracking-widest hover:border-primary-container transition-all">
+                        Sort: Performance <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
+<!-- Product Card 1 -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/10 hover:border-secondary-container/50 transition-all duration-300">
+<div class="absolute -top-1 -left-1 w-4 h-4 border-t border-l border-secondary-container opacity-0 group-hover:opacity-100 transition-all"></div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 border-b border-r border-secondary-container opacity-0 group-hover:opacity-100 transition-all"></div>
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<img alt="GPU" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" data-alt="Close-up high-angle shot of a sleek modern graphics card with metallic textures and glowing rgb lighting in a dark technical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNVyfRXdpVkymjM_wPeLgn79FIjTH5p_QqyLTTeYtGHk1z5pO0tsyx9TF-8MSBntxcdyzRJe-z6-DkBaK8_FHtULUFqTqtNyf36NXvwbusna7JjzJSAqi5aixITADbBGCHOxPEI4mUBaXZKbLQ6VIUp4n2sY952dz-NJdZ8HBBCAnLvCZy0lRAdAOIQlJdGp4w8MjKc0FmT7x-XvjoDAjItgOpmLs2TPQb5BwdbqHiKwLYa1mGQGByWhJaaWR8vVRUJCGfS1njr_I"/>
+<div class="absolute top-4 right-4 bg-primary-container text-[10px] font-headline uppercase tracking-widest px-3 py-1 text-on-primary">In Stock</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-label uppercase tracking-widest text-outline">Neural Engine / Gen 4</span>
+<span class="text-[10px] font-headline text-secondary-container">RTX READY</span>
+</div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight text-on-surface mb-1 group-hover:text-primary transition-colors">Vortex-7090 Extreme</h3>
+<p class="text-xs text-outline font-body leading-relaxed mb-6">24GB GDDR6X, Triple Fan Architecture, Liquid-Cooled Ready.</p>
+<div class="mt-auto flex flex-col gap-4">
+<div class="text-2xl font-headline font-bold text-secondary-fixed tracking-tighter">$1,899.00</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-headline font-bold uppercase tracking-widest text-sm shadow-[0_0_15px_rgba(0,244,254,0.3)] hover:shadow-[0_0_25px_rgba(0,244,254,0.6)] active:scale-95 transition-all">
+                                Add To Cart
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/10 hover:border-secondary-container/50 transition-all duration-300">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<img alt="RAM" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" data-alt="Close up shot of high speed RAM memory modules with chrome heat spreaders and glowing neon blue light strips on a dark motherboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSDOOMvGq1o8dpGqmLTR6vzKLiNzrWU_DzPHU6i9YbHrm9JGFpRyY7kk2dvxypW04eYwYx_oQCD9ogBmEjphqui9QGUphST5smyUGcjcIZVIQuxU9r1HHEc9D1ZagfnisqRkP92qp5477NanR5eDV2lGc3xEyDid5KQoRkjEffzU7ORuJIQ8eIyuBWOq-sjrzuBR4juNnPOW0EI7mHSzC82oJrbwP7s6iXPajY10g_RXLqSrLqpItiJvZRq4D7XQiZnwIQtd1TAno"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-label uppercase tracking-widest text-outline">System Memory / DDR5</span>
+<span class="text-[10px] font-headline text-secondary-container">OVERCLOCKABLE</span>
+</div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight text-on-surface mb-1 group-hover:text-primary transition-colors">Quantum-64 Sync</h3>
+<p class="text-xs text-outline font-body leading-relaxed mb-6">64GB Kit (2x32GB), 6400MHz CL32, ARGB Lumina Tech.</p>
+<div class="mt-auto flex flex-col gap-4">
+<div class="text-2xl font-headline font-bold text-secondary-fixed tracking-tighter">$349.00</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-headline font-bold uppercase tracking-widest text-sm shadow-[0_0_15px_rgba(0,244,254,0.3)] hover:shadow-[0_0_25px_rgba(0,244,254,0.6)] active:scale-95 transition-all">
+                                Add To Cart
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/10 hover:border-secondary-container/50 transition-all duration-300">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<img alt="CPU" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" data-alt="A top-down view of a high-performance computer processor CPU with intricate gold pins and a polished metal heat spreader" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyk5BnJpJqYIZyqWar7vPj7aZCK3qKYOTm16PA6a5H5FwdBTFhm-q9d9-DYekNM4-QWRUYSLBYzsjsIZ7J_g8_3GXxVNx6kzFKHQzvqEQTHoXY0QYWTH6Kp-McD8bETmQNgWH1FXYgib9xuF5t_O5kLeDwHvFX7VEiNmqseInhe6kJgSjnO7sj4xamy4LbICNOtMB3Dnu_Lk7RHL1jOmcv2dS3EjJQAwlaUxMuVC8getnvDkTEUG3UNAZTPkLEVMcUsLvpsVTV7ws"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-[10px] font-headline uppercase tracking-widest px-3 py-1 text-on-tertiary">Limited</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-label uppercase tracking-widest text-outline">Central Core / Multi-Thread</span>
+<span class="text-[10px] font-headline text-secondary-container">8NM PROCESS</span>
+</div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight text-on-surface mb-1 group-hover:text-primary transition-colors">Core-Arch X9</h3>
+<p class="text-xs text-outline font-body leading-relaxed mb-6">16 Cores, 32 Threads, 5.8GHz Boost Clock, 85MB Cache.</p>
+<div class="mt-auto flex flex-col gap-4">
+<div class="text-2xl font-headline font-bold text-secondary-fixed tracking-tighter">$799.00</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-headline font-bold uppercase tracking-widest text-sm shadow-[0_0_15px_rgba(0,244,254,0.3)] hover:shadow-[0_0_25px_rgba(0,244,254,0.6)] active:scale-95 transition-all">
+                                Add To Cart
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative flex flex-col bg-surface-container-lowest border border-outline-variant/10 hover:border-secondary-container/50 transition-all duration-300">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<img alt="SSD" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" data-alt="Close up macro shot of an M.2 NVMe SSD drive with dark circuit board textures and copper heat sinks in a high tech environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArOtJOEFC1tVGTGP7kT-jcrvTlrvsQeF1VyGUltJGoyzTQ1nMpsQrWoGWwG0AteUdlPdNpboRa7ihyt_ANVJ9NKSfBc1Cy4evyPpMVYnJ8T5FJaSlnK-1WilySuZ9Ufj_sIRZ8IG2Vk6kvse75em3LZdmKWenpm2z9Smh7MNGDyu7EjZzhAnODAUUZDA2y1_lVOsq7SMVgpSHXeWr0_3-_z-yS41E6QbxBNBP1ZnnwmWswRChQFSGSCeQxz2NP23iW93XZkJAAdK4"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-label uppercase tracking-widest text-outline">Flash Storage / NVMe</span>
+<span class="text-[10px] font-headline text-secondary-container">GEN 5 SPEEDS</span>
+</div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight text-on-surface mb-1 group-hover:text-primary transition-colors">Titan-Vault 4TB</h3>
+<p class="text-xs text-outline font-body leading-relaxed mb-6">Sequential Read up to 12,000 MB/s, Integrated Heat Sink.</p>
+<div class="mt-auto flex flex-col gap-4">
+<div class="text-2xl font-headline font-bold text-secondary-fixed tracking-tighter">$459.00</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-headline font-bold uppercase tracking-widest text-sm shadow-[0_0_15px_rgba(0,244,254,0.3)] hover:shadow-[0_0_25px_rgba(0,244,254,0.6)] active:scale-95 transition-all">
+                                Add To Cart
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination-like Data Stream indicator -->
+<div class="mt-20 flex flex-col items-center">
+<div class="circuit-line mb-4"></div>
+<button class="font-headline text-sm uppercase tracking-[0.5em] text-primary hover:text-secondary-container transition-colors py-4 px-12 border border-primary/20 hover:border-secondary-container/50">
+                    Load More Modules
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#0e0e0e] border-t border-[#7b2ff7]/20 font-['Manrope'] text-xs tracking-widest uppercase">
+<div class="text-[#d2bbff]/40">© 2024 SYNTHETIC ARCHITECT. ALL SYSTEMS OPERATIONAL.</div>
+<div class="flex gap-8">
+<a class="text-[#d2bbff]/40 hover:text-[#00f4fe] transition-colors" href="#">Support</a>
+<a class="text-[#d2bbff]/40 hover:text-[#00f4fe] transition-colors" href="#">Contact</a>
+<a class="text-[#d2bbff]/40 hover:text-[#00f4fe] transition-colors" href="#">Privacy</a>
+<a class="text-[#d2bbff]/40 hover:text-[#00f4fe] transition-colors" href="#">Terms</a>
+</div>
+</footer>
+</body></html>
